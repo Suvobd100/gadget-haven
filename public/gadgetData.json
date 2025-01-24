@@ -2,7 +2,7 @@
   {
     "product_id": 1,
     "product_title": "Dell XPS 15",
-    "product_image": "https://example.com/images/dell-xps-15.jpg",
+    "product_image": "https://i.ibb.co.com/RQ5tgXx/Dell-XPS-15-notebook-xps-15-9530-t-black-gallery.jpg",
     "category": "laptop",
     "price": 1299.99,
     "description": "A powerful and compact laptop with a stunning display and high performance.",
@@ -18,7 +18,7 @@
   {
     "product_id": 2,
     "product_title": "iPhone 14 Pro",
-    "product_image": "https://example.com/images/iphone-14-pro.jpg",
+    "product_image": "https://i.ibb.co.com/PTh9BSr/apple-iphone-14-pro-max.jpg",
     "category": "phone",
     "price": 999.99,
     "description": "Apple's latest flagship smartphone with advanced camera features.",
@@ -34,7 +34,7 @@
   {
     "product_id": 3,
     "product_title": "Noise Cancelling Headphones",
-    "product_image": "https://example.com/images/noise-cancelling-headphones.jpg",
+    "product_image": "https://i.ibb.co.com/bmqWhXs/Noise-Cancelling-Headphones.jpg",
     "category": "accessories",
     "price": 299.99,
     "description": "Premium noise-cancelling headphones with superior sound quality.",
@@ -50,7 +50,7 @@
   {
     "product_id": 4,
     "product_title": "Apple Watch Series 9",
-    "product_image": "https://example.com/images/apple-watch-series-9.jpg",
+    "product_image": "https://i.ibb.co.com/B3mNK2V/apple-watch-series9-aluminum.jpg",
     "category": "smart-watch",
     "price": 399.99,
     "description": "The ultimate health and fitness companion with advanced features.",
@@ -66,7 +66,7 @@
   {
     "product_id": 5,
     "product_title": "MacBook Pro 16",
-    "product_image": "https://example.com/images/macbook-pro-16.jpg",
+    "product_image": "https://i.ibb.co.com/RDCrJQS/Mac-Book-Pro-16.jpg",
     "category": "macbook",
     "price": 2499.99,
     "description": "High-performance laptop with a stunning Retina display and M-series chip.",
@@ -82,7 +82,7 @@
   {
     "product_id": 6,
     "product_title": "iPhone 14",
-    "product_image": "https://example.com/images/iphone-14.jpg",
+    "product_image": "https://i.ibb.co.com/gVstHpH/i-Phone-14.jpg",
     "category": "iphone",
     "price": 799.99,
     "description": "An affordable version of the iPhone with great performance and design.",
@@ -98,7 +98,7 @@
   {
     "product_id": 7,
     "product_title": "Lenovo ThinkPad X1 Carbon",
-    "product_image": "https://example.com/images/lenovo-thinkpad-x1-carbon.jpg",
+    "product_image": "https://i.ibb.co.com/vqzStLt/Lenovo-Think-Pad-X1-Carbon.jpg",
     "category": "laptop",
     "price": 1399.99,
     "description": "A business-focused laptop with exceptional build quality and performance.",
@@ -114,7 +114,7 @@
   {
     "product_id": 8,
     "product_title": "Samsung Galaxy S23",
-    "product_image": "https://example.com/images/samsung-galaxy-s23.jpg",
+    "product_image": "https://i.ibb.co.com/8Kzg1PX/Samsung-Galaxy-S23-Ultra-featured-image-packshot-review.jpg",
     "category": "phone",
     "price": 899.99,
     "description": "Samsung's flagship smartphone with a sleek design and excellent performance.",
@@ -130,7 +130,7 @@
   {
     "product_id": 9,
     "product_title": "Wireless Charging Pad",
-    "product_image": "https://example.com/images/wireless-charging-pad.jpg",
+    "product_image": "https://i.ibb.co.com/WGS7Bck/Wireless-Charging-Pad.jpg",
     "category": "accessories",
     "price": 49.99,
     "description": "A fast and efficient wireless charging pad for compatible devices.",
@@ -146,7 +146,7 @@
   {
     "product_id": 10,
     "product_title": "Garmin Forerunner 965",
-    "product_image": "https://example.com/images/garmin-forerunner-965.jpg",
+    "product_image": "https://i.ibb.co.com/XbNW840/Garmin-Forerunner-965.jpg",
     "category": "smart-watch",
     "price": 499.99,
     "description": "A top-tier smartwatch designed for athletes and fitness enthusiasts.",
@@ -162,7 +162,7 @@
   {
     "product_id": 11,
     "product_title": "MacBook Air M2",
-    "product_image": "https://example.com/images/macbook-air-m2.jpg",
+    "product_image": "https://i.ibb.co.com/S63BnYg/Mac-Book-Air-M2.jpg",
     "category": "macbook",
     "price": 1199.99,
     "description": "A lightweight laptop with exceptional battery life and Apple's M2 chip.",

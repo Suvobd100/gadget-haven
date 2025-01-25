@@ -1,32 +1,32 @@
 [
   {
     "category_id": 1,
-    "category": "laptop",
+    "category": "Laptop",
     "slug": "laptop"
   },
   {
     "category_id": 2,
-    "category": "phone",
+    "category": "Phone",
     "slug": "phone"
   },
   {
     "category_id": 3,
-    "category": "accessories",
+    "category": "Accessories",
     "slug": "accessories"
   },
   {
     "category_id": 4,
-    "category": "smart-watch",
+    "category": "Smart-watch",
     "slug": "smart-watch"
   },
   {
     "category_id": 5,
-    "category": "macbook",
+    "category": "Macbook",
     "slug": "macbook"
   },
   {
     "category_id": 6,
-    "category": "iphone",
+    "category": "Iphone",
     "slug": "iphone"
   }
 ]

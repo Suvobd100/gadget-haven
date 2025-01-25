@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Error() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center">
+    <div className="min-h-screen bg-indigo-400 flex flex-col justify-center items-center">
     <div className="text-center">
       <h1 className="text-9xl font-bold text-gray-800">404</h1>
       <div className="w-24 h-1 bg-indigo-500 mx-auto my-4"></div>
@@ -11,7 +11,8 @@ function Error() {
       <p className="text-gray-600 mb-8">The page you `&apos;`re looking for doesn `&apos;` t exist or has been moved.</p>
       <Link
         href="/"
-        className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105"
+        className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg 
+        transition duration-300 ease-in-out transform hover:scale-105"
       >
         Go Home
       </Link>

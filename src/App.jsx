@@ -24,7 +24,15 @@ import CategoryCards from "./components/CategoryCards";
                 {
                   path:'/',
                   element:<CategoryCards/>,
-                  loader:()=>fetch('../public/category.json')
+                  loader: async () => {
+                    const categoryResponse = await fetch('../public/category.json');
+                    const gadgetResponse = await fetch('../public/gadgetData.json');
+                    
+                    const categoryData = await categoryResponse.json();
+                    const gadgetData = await gadgetResponse.json();
+            
+                    return { categoryData, gadgetData };
+                  },
                 }
               ]
             },

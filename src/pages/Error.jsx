@@ -8,7 +8,7 @@ function Error() {
       <h1 className="text-9xl font-bold text-gray-800">404</h1>
       <div className="w-24 h-1 bg-indigo-500 mx-auto my-4"></div>
       <h2 className="text-3xl font-semibold mb-4">Oops! Page not found</h2>
-      <p className="text-gray-600 mb-8">The page you're looking for doesn't exist or has been moved.</p>
+      <p className="text-gray-600 mb-8">The page you `&apos;`re looking for doesn `&apos;` t exist or has been moved.</p>
       <Link
         href="/"
         className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105"

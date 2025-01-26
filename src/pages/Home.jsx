@@ -33,12 +33,14 @@ const Home = () => {
         </div>
       </div>
       {/* Heading */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 justify-center">
-        <div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+        <div className="flex justify-center items-center">
           <CategoriesGadget categoriesGadget={categoriesGadget} />
         </div>
         {/* Dynamic nested component with category list by grid */}
-        <div className="">{<Outlet />}</div>
+        <div className="flex justify-center items-center">
+          {<Outlet />}
+          </div>
       </div>
     </div>
   );

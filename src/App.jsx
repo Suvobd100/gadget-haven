@@ -25,6 +25,7 @@ import CardContainer from "./components/CardContainer";
                 {
                   path:'/',
                   element:<CardContainer/>,
+                  // loader:
                   // loader: async () => {
                   //   const categoryResponse = await fetch('../public/category.json');
                   //   const gadgetResponse = await fetch('../public/gadgetData.json');

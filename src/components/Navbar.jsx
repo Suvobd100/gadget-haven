@@ -1,7 +1,6 @@
-
 import { Link, NavLink } from "react-router-dom";
-import heartIcon from "../assets/image/icons8-heart-50.png"
-import cartIcon from "../assets/image/icons8-cart-50.png"
+import heartIcon from "../assets/image/icons8-heart-50.png";
+import cartIcon from "../assets/image/icons8-cart-50.png";
 
 const NavBar = () => {
   return (
@@ -47,7 +46,9 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <Link to='/' className="btn btn-ghost text-xl">Gadget Heaven</Link>
+        <Link to="/" className="btn btn-ghost text-xl">
+          Gadget Heaven
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -84,8 +85,18 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <img className="rounded-xl w-10 h-10 p-2"src={cartIcon} alt="" />
-        <img className="rounded-xl w-10 h-10 p-2"src={heartIcon} alt="" />
+        <div className="flex gap-3">
+          <img
+            className="border-1 border-gray-400 rounded-full w-8 h-8 p-2 cursor-pointer"
+            src={cartIcon}
+            alt=""
+          />
+          <img
+            className="border-1 border-gray-400 rounded-full w-8 h-8 p-2 cursor-pointer"
+            src={heartIcon}
+            alt=""
+          />
+        </div>
       </div>
     </div>
   );

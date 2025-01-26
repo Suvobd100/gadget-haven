@@ -54,7 +54,7 @@ const ProductDetail = () => {
      
       {
         <div className="flex justify-center">
-          <div className="w-[800px] h-[800px] bg-white mt-42 rounded-2xl ">
+          <div className="w-[800px] h-[800px] bg-white mt-56 rounded-2xl ">
             <div className="flex justify-start p-4 gap-6">
               <div className="w-[600px] h-[500px] rounded">
                 <img className="rounded-2xl w-full mt-5" src={product_image} alt="" />
@@ -117,11 +117,11 @@ const ProductDetail = () => {
                         className="mask mask-star-2 bg-stone-400"
                       />
                     </div>
-                    <p>{rating}</p>
+                    <p className="bg-stone-100 p-2 rounded-xl">{rating}</p>
                   </div>
                   <div className="flex items-center justify-start gap-2">
                   <button className="btn bg-purple-500 text-white rounded-full mt-4">Add To Card</button>
-                  <div className="p-2 border-1 border-gray-600 rounded-full mt-2 cursor-pointer">
+                  <div className="p-2 border-1 border-gray-400 rounded-full mt-2 cursor-pointer">
                   <img className="w-6" src={Iconheart} alt="" />
                   </div>
                   </div>

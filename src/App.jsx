@@ -21,11 +21,12 @@ import CardContainer from "./components/CardContainer";
             {
               path: "/",
               element: <Home />,
+              loader:()=>fetch('../category.json'),
               children:[
                 {
                   path:'/',
                   element:<CardContainer/>,
-                  // loader:
+                  loader: ()=> fetch('../gadgetData.json'),
                   // loader: async () => {
                   //   const categoryResponse = await fetch('../public/category.json');
                   //   const gadgetResponse = await fetch('../public/gadgetData.json');

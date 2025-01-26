@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 import bgPic from "../assets/image/banner.jpg";
+import CategoriesGadget from "../components/CategoriesGadget";
 
 const Home = () => {
   return (
@@ -32,6 +33,7 @@ const Home = () => {
       </div>
       </div>
       {/* Heading */}
+      <CategoriesGadget/>
       {/* Dynamic nested component with category list by grid */}
       <Outlet />
     </div>

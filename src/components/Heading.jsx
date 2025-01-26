@@ -12,7 +12,7 @@ function Heading({ title}) {
 
 Heading.propTypes = {
   title: PropTypes.string,
-  subtitle: PropTypes.string,
+  
 };
 
 export default Heading;

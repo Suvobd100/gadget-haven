@@ -5,7 +5,7 @@ import cartIcon from "../assets/image/icons8-cart-50.png"
 
 const NavBar = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar px-28 backdrop-blur-xl bg-white/30 z-50 fixed">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

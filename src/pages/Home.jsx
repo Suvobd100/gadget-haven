@@ -8,8 +8,6 @@ const Home = () => {
   // console.log(categoriesGadget);
   return (
     <div className="container justify-center ">
-      Home
-      <h1>This is home.........</h1>
       {/* Banner */}
       <div className="bg-stone-100 p-4">
         <div className="hero bg-purple-500 p-4 rounded-2xl">
@@ -39,11 +37,9 @@ const Home = () => {
         <div>
           <CategoriesGadget categoriesGadget={categoriesGadget} />
         </div>
-         {/* Dynamic nested component with category list by grid */}
+        {/* Dynamic nested component with category list by grid */}
         <div className="">{<Outlet />}</div>
       </div>
-     
-      
     </div>
   );
 };

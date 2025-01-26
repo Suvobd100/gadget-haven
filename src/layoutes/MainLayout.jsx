@@ -12,7 +12,7 @@ const MainLayout = () => {
         <NavBar />
       </div>
       
-      <div className="min-h-[calc(100vh-420px)] py-12 container mx-auto">
+      <div className="min-h-[calc(100vh-420px)] p-24 container mx-auto">
         {/* Dynamic Section */}
         <Outlet />
       </div>

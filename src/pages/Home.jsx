@@ -35,12 +35,12 @@ const Home = () => {
         </div>
       </div>
       {/* Heading */}
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 justify-center">
         <div>
           <CategoriesGadget categoriesGadget={categoriesGadget} />
         </div>
          {/* Dynamic nested component with category list by grid */}
-        <div className="mt-12">{<Outlet />}</div>
+        <div className="">{<Outlet />}</div>
       </div>
      
       

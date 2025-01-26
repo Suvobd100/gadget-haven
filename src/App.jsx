@@ -5,8 +5,9 @@ import Dashboard from "./pages/Dashboard";
 import MainLayout from "./layoutes/MainLayout";
 import Error from "./pages/Error";
 import Statistics from "./pages/Statistics";
-import CategoryCards from "./components/CategoryCards";
-import CardContainer from "./components/CardContainer";
+import CategoryCards from "./components/CategoryCards-not-use";
+import CardContainer from "./components/CardContainer-not-use";
+import GadgetCards from "./components/GadgetCards";
  
 
 
@@ -25,20 +26,19 @@ import CardContainer from "./components/CardContainer";
               children:[
                 {
                   path:'/',
-                  element:<CardContainer/>,
-                  loader: ()=> fetch('../gadgetData.json'),
-                  // loader: async () => {
-                  //   const categoryResponse = await fetch('../public/category.json');
-                  //   const gadgetResponse = await fetch('../public/gadgetData.json');
-                    
-                  //   const categoryData = await categoryResponse.json();
-                  //   const gadgetData = await gadgetResponse.json();
-            
-                  //   return { categoryData, gadgetData };
-                  // },
-                }
+                  element:<GadgetCards/>,
+                  loader:()=>fetch('../gadgetData.json'),
+                },
+                {
+                  path:'/category/:category',
+                  element:<GadgetCards/>,
+                  loader:()=>fetch('../gadgetData.json'),
+                },
+
               ]
+              
             },
+            
             {
               path: "/product",
               element: <ProductDetail />,

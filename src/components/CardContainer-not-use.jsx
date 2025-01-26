@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+// import { useEffect, useState } from "react";
+// import { useLoaderData } from "react-router-dom";
 
 const CardContainer = () => {
-  const categoryData = useLoaderData();
+  // const categoryData = useLoaderData();
 
   // const [gadGet,stGadget]=useState([]);
   // get category data
@@ -16,7 +16,7 @@ const CardContainer = () => {
 
   return (
     <div>
-      <h2 className="text-center">This is Card container Category and All cards-6/9</h2>
+      {/* <h2 className="text-center">This is Card container Category and All cards-6/9</h2>
       <br />
       <div className="flex gap-6 justify-center items-center">
       <div className="grid grid-cols-1 gap-2">
@@ -43,7 +43,7 @@ const CardContainer = () => {
             <h2>Deal Laptop 15inch</h2>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

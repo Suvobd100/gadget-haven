@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import SubHeading from "./SubHeading";
 import singleStar from "../assets/image/icons8-star-48.png";
 import Iconheart from "../assets/image/icons8-heart-50.png"
+import { addFavorite } from "./utils";
 
 const ProductDetail = () => {
   const { product_id } = useParams();
@@ -16,22 +17,7 @@ const ProductDetail = () => {
     // console.log(gadget);
   }, [data, product_id]);
 
-  //   {
-  //     "product_id": 1,
-  //     "product_title": "Dell XPS 15",
-  //     "product_image": "https://i.ibb.co.com/RQ5tgXx/Dell-XPS-15-notebook-xps-15-9530-t-black-gallery.jpg",
-  //     "category": "laptop",
-  //     "price": 1299.99,
-  //     "description": "A powerful and compact laptop with a stunning display and high performance.",
-  //     "specification": [
-  //         "Intel Core i7",
-  //         "16GB RAM",
-  //         "512GB SSD",
-  //         "15.6-inch 4K display"
-  //     ],
-  //     "availability": true,
-  //     "rating": 4.7
-  // }
+  
   const {
     product_title,
     product_image,
@@ -40,6 +26,10 @@ const ProductDetail = () => {
     specification,
     rating,
   } = gadget;
+
+  const handelAddCard=(gadget)=>{
+    addFavorite(gadget)
+  }
 
   return (
     <div className="">
@@ -119,10 +109,14 @@ const ProductDetail = () => {
                     </div>
                     <p className="bg-stone-100 p-2 rounded-xl">{rating}</p>
                   </div>
+                  {/* Add to card btn */}
                   <div className="flex items-center justify-start gap-2">
-                  <button className="btn bg-purple-500 text-white rounded-full mt-4">Add To Card</button>
+                  <button onClick={()=>handelAddCard(gadget)}  
+                  className="btn bg-purple-500 text-white rounded-full mt-4">
+                    Add To Card</button>
+
                   <div className="p-2 border-1 border-gray-400 rounded-full mt-2 cursor-pointer">
-                  <img className="w-6" src={Iconheart} alt="" />
+                      <img className="w-6" src={Iconheart} alt="" />
                   </div>
                   </div>
                 </div>

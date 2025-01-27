@@ -5,8 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import MainLayout from "./layoutes/MainLayout";
 import Error from "./pages/Error";
 import Statistics from "./pages/Statistics";
-import CategoryCards from "./components/CategoryCards-not-use";
-import CardContainer from "./components/CardContainer-not-use";
+
 import GadgetCards from "./components/GadgetCards";
 import ProductDetail from "./components/ProductDetail";
  

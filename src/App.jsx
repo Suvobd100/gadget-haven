@@ -47,7 +47,8 @@ import ProductDetail from "./components/ProductDetail";
             },
             {
               path: "/dashboard",
-              element: <Dashboard/>
+              element: <Dashboard/>,
+              loader:()=>fetch('../gadgetData.json'),
             },
             {
               path: "/statistics",

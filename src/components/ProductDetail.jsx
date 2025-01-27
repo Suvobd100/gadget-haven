@@ -13,7 +13,7 @@ const ProductDetail = () => {
   useState(() => {
     const singleData = data.find((g) => g.product_id === parseInt(product_id));
     setGadget(singleData);
-    console.log(gadget);
+    // console.log(gadget);
   }, [data, product_id]);
 
   //   {

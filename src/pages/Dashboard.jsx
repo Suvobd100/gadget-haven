@@ -3,6 +3,7 @@ import SubHeading from "../components/SubHeading";
 import Card from "../components/Card";
 
 
+
 const Dashboard = () => {
   // State to store retrieved data
   const [data, setData] = useState([]);
@@ -16,8 +17,19 @@ const Dashboard = () => {
       setData("No data found in localStorage.");
     }
   };
+// Get wish list data from local storage
+  const hendelWish=()=>{
+    const storedData = JSON.parse(localStorage.getItem("wishes"));
+    if (storedData) {
+      setData(storedData);
+    } else {
+      setData("no data");
+    }
 
-  console.log(data);
+  }
+  // for Active button Cart & functionality
+  const [activeTab, setActiveTab] = useState("");
+
   return (
     <div>
       <div>
@@ -29,20 +41,33 @@ const Dashboard = () => {
         />
         <div className="flex justify-center items-center gap-12 -mt-20">
           <button
-            onClick={() => handleGetData()}
-            className="btn bg-stone-300 text-purple-500 rounded-full p-5 w-32 h-12 font-bold text-xl"
+            onClick={() => 
+              {handleGetData();
+              setActiveTab("Cart"); }}
+            className={`btn bg-stone-300 text-purple-500 rounded-full p-5 w-32 h-12 font-bold text-xl
+              ${
+                activeTab === "Cart" ? "bg-stone-300 text-purple-500 rounded-full p-5 w-32 h-12 font-bold text-xl" : " "
+              }
+              `}
           >
             Cart
           </button>
-          <button className="btn bg-purple-500 text-white rounded-full outline-1 p-5 w-32 h-12 text-xl">
-            Wishlist
+          <button 
+          onClick={()=>{hendelWish();
+            setActiveTab("Wishlist")}}
+          className={`btn bg-purple-500 text-white rounded-full outline-1 p-5 w-32 h-12 text-xl
+            ${
+              activeTab === "Wishlist" ? "bg-stone-300 text-purple-500 rounded-full p-5 w-32 h-12 font-bold text-xl" : " "
+            }
+          `}>
+            Wishlist 
           </button>
         </div>
       </div>
 
       <div className="mt-11 grid grid-cols-1 gap-5">
         {data.map((p) => (
-          <Card key={p.product_id} cartData={p}></Card>
+          <Card key={p.product_id} cartData={p} activeTab={activeTab}></Card>
         ))}
       </div>
     </div>

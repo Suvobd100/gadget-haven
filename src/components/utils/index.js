@@ -2,12 +2,15 @@ import toast from "react-hot-toast";
 
 // 2. Get all Coffees from local storage
 const getAllFavorites = () => {
-  const allLocalStorageCoffeeData = localStorage.getItem("favorites");
+  const allLocalStorageCoffeeData = localStorage.getItem("carts");
+//   const allLocalStorageCoffeeData = localStorage.getItem("favorites");
 
   if (allLocalStorageCoffeeData) {
-    const favorites = JSON.parse(allLocalStorageCoffeeData);
+    const oldData = JSON.parse(allLocalStorageCoffeeData);
+    // const favorites = JSON.parse(allLocalStorageCoffeeData);
     // console.log(favorites);
-    return favorites;
+    return oldData;
+    // return favorites;
   } else {
     console.log([]);
     return [];
@@ -18,16 +21,20 @@ const getAllFavorites = () => {
 const addFavorite = (gadget) => {
   // Get all previously Favorite save Coffee data
 
-  const favorites = getAllFavorites();
-  const isExist = favorites.find((item) => item.product_id == gadget.product_id);
+//   const favorites = getAllFavorites();
+  const prvData = getAllFavorites();
+//   const isExist = favorites.find((item) => item.product_id == gadget.product_id);
+  const isExist = prvData.find((item) => item.product_id == gadget.product_id);
   if (isExist) {
     return toast.error("This Product already exists!");
   }
 
   //   console.log(favorites);
-  favorites.push(gadget);
+//   favorites.push(gadget);
+  prvData.push(gadget);
 //   add local storage
-  localStorage.setItem("favorites", JSON.stringify(favorites));
+//   localStorage.setItem("favorites", JSON.stringify(favorites));
+  localStorage.setItem("carts", JSON.stringify(prvData));
   toast.success("Successfully added The Product!");
 };
 
@@ -42,4 +49,4 @@ const addFavorite = (gadget) => {
 //   toast.success("Successfully Remove The Coffee!");
 // };
 
-export { addFavorite };
+export { addFavorite,getAllFavorites };

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import SubHeading from "./SubHeading";
 import singleStar from "../assets/image/icons8-star-48.png";
-import Iconheart from "../assets/image/icons8-heart-50.png"
-import { addFavorite } from "./utils";
+import Iconheart from "../assets/image/icons8-heart-50.png";
+import { addFavorite, getAllFavorites } from "./utils";
 
 const ProductDetail = () => {
   const { product_id } = useParams();
@@ -11,13 +11,24 @@ const ProductDetail = () => {
   const data = useLoaderData();
   //   console.log(data);
   const [gadget, setGadget] = useState({});
+
+  // Add Cart Button Disabled function when data found in local storage
+  const [isCart, setIsCart] = useState(false);
+
   useState(() => {
     const singleData = data.find((g) => g.product_id === parseInt(product_id));
     setGadget(singleData);
     // console.log(gadget);
+    // Cart button checked from local storage getAllFavorite function
+    const favorites = getAllFavorites();
+    const isExist = favorites.find(
+      (item) => item.product_id === parseInt(product_id)
+    );
+    if (isExist) {
+      setIsCart(true);
+    }
   }, [data, product_id]);
 
-  
   const {
     product_title,
     product_image,
@@ -26,10 +37,11 @@ const ProductDetail = () => {
     specification,
     rating,
   } = gadget;
-
-  const handelAddCard=(gadget)=>{
-    addFavorite(gadget)
-  }
+  // local storage
+  const handelAddCard = (gadget) => {
+    addFavorite(gadget);
+    setIsCart(true)
+  };
 
   return (
     <div className="">
@@ -41,13 +53,17 @@ const ProductDetail = () => {
           }
         />
       </div>
-     
+
       {
         <div className="flex justify-center">
           <div className="w-[800px] h-[800px] bg-white mt-56 rounded-2xl ">
             <div className="flex justify-start p-4 gap-6">
               <div className="w-[600px] h-[500px] rounded">
-                <img className="rounded-2xl w-full mt-5" src={product_image} alt="" />
+                <img
+                  className="rounded-2xl w-full mt-5"
+                  src={product_image}
+                  alt=""
+                />
               </div>
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold">{product_title}</h2>
@@ -111,13 +127,17 @@ const ProductDetail = () => {
                   </div>
                   {/* Add to card btn */}
                   <div className="flex items-center justify-start gap-2">
-                  <button onClick={()=>handelAddCard(gadget)}  
-                  className="btn bg-purple-500 text-white rounded-full mt-4">
-                    Add To Card</button>
+                    <button
+                      disabled={isCart}
+                      onClick={() => handelAddCard(gadget)}
+                      className="btn bg-purple-500 text-white rounded-full mt-4"
+                    >
+                      Add To Card
+                    </button>
 
-                  <div className="p-2 border-1 border-gray-400 rounded-full mt-2 cursor-pointer">
+                    <div className="p-2 border-1 border-gray-400 rounded-full mt-2 cursor-pointer">
                       <img className="w-6" src={Iconheart} alt="" />
-                  </div>
+                    </div>
                   </div>
                 </div>
               </div>

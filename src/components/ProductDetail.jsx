@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import SubHeading from "./SubHeading";
 import singleStar from "../assets/image/icons8-star-48.png";
 import Iconheart from "../assets/image/icons8-heart-50.png";
-import { addFavorite, getAllFavorites } from "./utils";
+import { addFavorite, addWish, getAllWishes } from "./utils";
+import cartIcon from "../assets/image/icons8-cart-24-white.png"
 
 const ProductDetail = () => {
   const { product_id } = useParams();
@@ -13,19 +14,19 @@ const ProductDetail = () => {
   const [gadget, setGadget] = useState({});
 
   // Add Cart Button Disabled function when data found in local storage
-  const [isCart, setIsCart] = useState(false);
+  const [isHeart, setIsHeart] = useState(false);
 
-  useState(() => {
+  useEffect(() => {
     const singleData = data.find((g) => g.product_id === parseInt(product_id));
     setGadget(singleData);
     // console.log(gadget);
     // Cart button checked from local storage getAllFavorite function
-    const favorites = getAllFavorites();
+    const favorites = getAllWishes();
     const isExist = favorites.find(
-      (item) => item.product_id === parseInt(product_id)
+      (item) => parseInt(item.product_id) === parseInt(product_id)
     );
     if (isExist) {
-      setIsCart(true);
+      setIsHeart(true);
     }
   }, [data, product_id]);
 
@@ -37,11 +38,17 @@ const ProductDetail = () => {
     specification,
     rating,
   } = gadget;
-  // local storage
+  // Add cart local storage fun
   const handelAddCard = (gadget) => {
     addFavorite(gadget);
-    setIsCart(true)
+    
   };
+
+// wish fun local storage
+  const handelWish=(gadget)=>{
+    addWish(gadget);
+    setIsHeart(true)
+  }
 
   return (
     <div className="">
@@ -127,15 +134,19 @@ const ProductDetail = () => {
                   </div>
                   {/* Add to card btn */}
                   <div className="flex items-center justify-start gap-2">
-                    <button
-                      disabled={isCart}
+                    <div
+                      
                       onClick={() => handelAddCard(gadget)}
-                      className="btn bg-purple-500 text-white rounded-full mt-4"
+                      className="btn bg-purple-500 text-white text-left rounded-full mt-4 p-6"
                     >
-                      Add To Card
-                    </button>
+                      Add To Cart {<img className="w-4 absolute ml-26 " src={cartIcon} />}
+                    </div>
+                     
 
-                    <div className="p-2 border-1 border-gray-400 rounded-full mt-2 cursor-pointer">
+                    <div 
+                    disabled={isHeart}
+                    onClick={()=>handelWish(gadget)}
+                    className="p-2 border-1 border-gray-400 rounded-full mt-2 cursor-pointer">
                       <img className="w-6" src={Iconheart} alt="" />
                     </div>
                   </div>

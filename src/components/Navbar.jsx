@@ -28,21 +28,52 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Item 1</a>
+              <NavLink
+                className={({ isActive }) =>
+                  `font-bold ${
+                    isActive ? "text-warning" : "hover:text-warning"
+                  }`
+                }
+                to="/"
+              >
+                HOME
+              </NavLink>
             </li>
             <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <NavLink
+                className={({ isActive }) =>
+                  `font-bold ${
+                    isActive ? "text-warning" : "hover:text-warning"
+                  }`
+                }
+                to="/statistics"
+              >
+                Statistics
+              </NavLink>
             </li>
             <li>
-              <a>Item 3</a>
+              <NavLink
+                className={({ isActive }) =>
+                  `font-bold ${
+                    isActive ? "text-warning" : "hover:text-warning"
+                  }`
+                }
+                to="/dashboard"
+              >
+                Dashboard
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  `font-bold ${
+                    isActive ? "text-warning" : "hover:text-warning"
+                  }`
+                }
+                to="/contactform"
+              >
+                Connect
+              </NavLink>
             </li>
           </ul>
         </div>

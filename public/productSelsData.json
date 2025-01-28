@@ -1,0 +1,35 @@
+{
+    "sales_data": [
+      {
+        "month": "January",
+        "product1_sales": 1200,
+        "product2_sales": 800
+      },
+      {
+        "month": "February",
+        "product1_sales": 1500,
+        "product2_sales": 950
+      },
+      {
+        "month": "March",
+        "product1_sales": 1400,
+        "product2_sales": 1100
+      },
+      {
+        "month": "April",
+        "product1_sales": 1300,
+        "product2_sales": 1000
+      },
+      {
+        "month": "May",
+        "product1_sales": 1600,
+        "product2_sales": 1200
+      },
+      {
+        "month": "June",
+        "product1_sales": 1700,
+        "product2_sales": 1300
+      }
+    ]
+  }
+  

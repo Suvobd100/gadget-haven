@@ -51,7 +51,8 @@ import ProductDetail from "./components/ProductDetail";
             },
             {
               path: "/statistics",
-              element: <Statistics/>
+              element: <Statistics/>,
+              loader:()=>fetch('../productSelsData.json'),
             },
           ]
        } ,

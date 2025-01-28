@@ -13,7 +13,7 @@ const Home = () => {
         <div className="hero bg-purple-500 p-4 rounded-2xl">
           <div className="hero-content text-center">
             <div className="max-w-full">
-              <h1 className="text-5xl font-bold">
+              <h1 className="lg:text-5xl font-bold">
                 Upgrade Your Tech Accessorize with <br /> Gadget Heaven
                 Accessories
               </h1>

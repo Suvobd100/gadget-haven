@@ -4,7 +4,7 @@ import cartIcon from "../assets/image/icons8-cart-50.png";
 
 const NavBar = () => {
   return (
-    <div className="navbar px-28 backdrop-blur-xl bg-white/30 z-50 fixed">
+    <div className="navbar lg:px-28 backdrop-blur-xl bg-white/30 z-50 fixed">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -77,7 +77,7 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl">
+        <Link to="/" className="btn btn-ghost text-xl lg:text-2xl textarea-md">
           Gadget Heaven
         </Link>
       </div>
@@ -128,12 +128,14 @@ const NavBar = () => {
       <div className="navbar-end">
         <div className="flex gap-3">
           <img
-            className="border-1 border-gray-400 rounded-full w-8 h-8 p-2 cursor-pointer"
+            className="border-1 border-gray-400 rounded-full w-8 h-8 p-2 cursor-pointer hover:bg-stone-300 transition-transform duration-300"
             src={cartIcon}
             alt=""
           />
           <img
-            className="border-1 border-gray-400 rounded-full w-8 h-8 p-2 cursor-pointer"
+            className="border-1 border-gray-400 
+            rounded-full w-8 h-8 p-2 cursor-pointer
+            hover:bg-stone-300 transition-transform duration-300"
             src={heartIcon}
             alt=""
           />

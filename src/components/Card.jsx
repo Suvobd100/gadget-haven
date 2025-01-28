@@ -22,17 +22,19 @@ const Card = ({ cartData, activeTab }) => {
     <div>
       {activeTab === "Cart" && (
         <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-full">
-          <h2 className="text-4xl font-bold mb-4">Cart</h2>
+          <h2 className="lg:text-4xl font-bold mb-4">Cart</h2>
           <div className="">
             <div className="flex justify-end gap-4 mt-4 font-bold ">
+              <div className="mt-2 lg:text-2xl">
               <span>Total Cost:</span>
               <span>{totalCost}</span>
-              <button className="px-4 py-2 bg-stone-300 text-purple-500 rounded-full text-xl">
+              </div>
+              <button className="lg:px-4 py-2 bg-stone-300 text-purple-500 lg:rounded-full rounded-2xl lg:text-xl">
                 Sort by Price
               </button>
               <button
                 onClick={() => handelCost()}
-                className="px-4 py-2 bg-purple-500 text-white rounded-full outline-1  text-xl"
+                className="lg:px-4 px-2 lg:py-2 bg-purple-500 text-white lg:rounded-full rounded-2xl outline-1  lg:text-xl"
               >
                 Purchase
               </button>
@@ -63,7 +65,7 @@ const Card = ({ cartData, activeTab }) => {
 
                 <p>{description}</p>
               </div>
-              <div className="flex gap-2">
+              <div className="flex gap-2 ">
                 <span className="font-bold">
                   Price: <span>$</span>
                 </span>

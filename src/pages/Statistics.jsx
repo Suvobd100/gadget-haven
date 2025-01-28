@@ -34,12 +34,14 @@ const Statistics = () => {
           </h2>
         </div>
 
-        <AreaChart width={500} height={400} data={data.sales_data}>
+        <AreaChart lg:width={500} width={302} lg:height={400} height={170} 
+        data={data.sales_data} 
+        className="-ml-8">
           <YAxis />
           <XAxis dataKey={"name"} />
           <CartesianGrid strokeDasharray={"5 5"} />
           <Tooltip />
-          <Legend />
+          <Legend  />
 
           <Area
             type={"monotone"}

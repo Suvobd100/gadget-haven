@@ -44,9 +44,9 @@ const Dashboard = () => {
             onClick={() => 
               {handleGetData();
               setActiveTab("Cart"); }}
-            className={`btn bg-stone-300 text-purple-500 rounded-full p-5 w-32 h-12 font-bold text-xl
+            className={`btn bg-stone-300 text-purple-500 rounded-full p-5 lg:w-32 lg:h-12 font-bold lg:text-xl
               ${
-                activeTab === "Cart" ? "bg-stone-300 text-purple-500 rounded-full p-5 w-32 h-12 font-bold text-xl" : " "
+                activeTab === "Cart" ? "bg-stone-300 text-purple-500 rounded-full p-5 lg:w-32 lg:h-12 font-bold lg:text-xl" : " "
               }
               `}
           >
@@ -55,9 +55,9 @@ const Dashboard = () => {
           <button 
           onClick={()=>{hendelWish();
             setActiveTab("Wishlist")}}
-          className={`btn bg-purple-500 text-white rounded-full outline-1 p-5 w-32 h-12 text-xl
+          className={`btn bg-purple-500 text-white rounded-full outline-1 p-5 lg:w-32 lg:h-12 lg:text-xl
             ${
-              activeTab === "Wishlist" ? "bg-stone-300 text-purple-500 rounded-full p-5 w-32 h-12 font-bold text-xl" : " "
+              activeTab === "Wishlist" ? "bg-stone-300 text-purple-500 rounded-full p-5 lg:w-32 lg:h-12 font-bold lg:text-xl" : " "
             }
           `}>
             Wishlist 
@@ -65,9 +65,9 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="mt-11 grid grid-cols-1 gap-5">
+      <div className="mt-11 grid grid-cols-1 lg:gap-5">
         {data.map((p) => (
-          <Card key={p.product_id} cartData={p} activeTab={activeTab}></Card>
+          <Card key={p.product_id} cartData={p} activeTab={activeTab} ></Card>
         ))}
       </div>
     </div>

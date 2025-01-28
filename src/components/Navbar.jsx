@@ -82,6 +82,16 @@ const NavBar = () => {
               Dashboard
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `font-bold ${isActive ? "text-warning" : "hover:text-warning"}`
+              }
+              to="/contactform"
+            >
+              Connect
+            </NavLink>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">

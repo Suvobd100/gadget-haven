@@ -8,6 +8,7 @@ import Statistics from "./pages/Statistics";
 
 import GadgetCards from "./components/GadgetCards";
 import ProductDetail from "./components/ProductDetail";
+import ContactForm from "./components/ContactForm";
  
 
 
@@ -53,6 +54,11 @@ import ProductDetail from "./components/ProductDetail";
               path: "/statistics",
               element: <Statistics/>,
               loader:()=>fetch('../productSelsData.json'),
+            },
+            {
+              path: "/contactform",
+              element: <ContactForm/>,
+              
             },
           ]
        } ,

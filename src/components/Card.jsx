@@ -1,11 +1,17 @@
 import PropTypes from "prop-types";
 import cancelIcon from "../assets/image/icons8-cancel-50.png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import paymentConfirmIcon from "../assets/image/Group.png"
+
+import { LocalStorageDataContext } from "../components/utils/LocalStorageContext";
+// import { getAllFavorites, removeFavorite } from "../components/utils/LocalStorageContext";
 
 const Card = ({ cartData, activeTab }) => {
-  const { product_image, product_title, description, price } = cartData;
+  // local storage data by array
+  const { data: products,removeFavorite,sortProductsDesc : handelSort } = useContext(LocalStorageDataContext);
+  // console.log('local storage:---',data);
+
+  const { description, price } = cartData;
   //   console.log('frm card which btn clked--?',activeTab);
   // set price from local storage
   const [totalCost, setTotalcost] = useState(0);
@@ -21,60 +27,34 @@ const Card = ({ cartData, activeTab }) => {
       title: "Payment Successful!",
       html: `
         <p>Thanks for purchasing!</p>
-        <p><strong>Total Cost:</strong> ${totalCost}</p>
+        <br>
+        <p><strong>Total Cost:</strong> ${totalPrice}</p>
       `,
-      iconHtml: `<img src="assets/image/Group.png" alt="Custom Icon" style="width: 80px; height: 80px; border-radius: 50%;" />`, // Custom icon 
+      iconHtml: `<img src="https://i.ibb.co.com/Yt97tjt/Group.png" alt="Custom Icon" style="width: 80px; height: 80px;" />`, // Custom icon
       customClass: {
-        icon: "no-border", 
+        // popup: "rounded-lg shadow-lg p-6",
+        // icon: " ", // Custom class for the icon
+        confirmButton:
+          "w-full bg-blue-500 bg-stone-400 text-black font-bold py-2 px-4 rounded", // Custom class for the button
       },
       showConfirmButton: true,
-      confirmButtonText: "OK",
-      confirmButtonColor: "#3085d6",
-      
+      confirmButtonText: "Close",
+      confirmButtonColor: "#cfdae6",
     });
-
   };
-  // console.log(totalCost);
 
-  // sorted by price useStete with fun
-  // console.log(cartData);
-  // const arrayData = Object.entries(objectData);
 
-  //   {
-  //     "product_id": 1,
-  //     "product_title": "Dell XPS 15",
-  //     "product_image": "https://i.ibb.co.com/RQ5tgXx/Dell-XPS-15-notebook-xps-15-9530-t-black-gallery.jpg",
-  //     "category": "laptop",
-  //     "price": 1299.99,
-  //     "description": "A powerful and compact laptop with a stunning display and high performance.",
-  //     "specification": [
-  //         "Intel Core i7",
-  //         "16GB RAM",
-  //         "512GB SSD",
-  //         "15.6-inch 4K display"
-  //     ],
-  //     "availability": true,
-  //     "rating": 4.7
-  // }
-  // const arrayData = Object.values(cartData);
+  // handel remove fun
+  const handelRemove = (id) => {
+    // console.log('cards--',id);
+    removeFavorite(id);  };
 
-  // const arrayData = Object.entries(cartData).map(([key, value]) => ({
-  //   itemKey: key,
-  //   itemId: value.id,
-  //   itemPrice: value.price,
-  //   discountPrice: value.price * 0.9, // Apply a discount
-  // }));
+  //   // Auto sort in descending order when render
+  // useEffect(() => {
+  //   handelSort();
+  // }, []);
 
-  // console.log('arry data',arrayData);
 
-  // const [sorted, setSorted] = useState(arrayData);
-
-  // const handelSortByPrice = (price) => {
-
-  //   const sortedPrice = [...arrayData].sort((a, b) => a.price - b.price);
-  //   setSorted(sortedPrice);
-  //   console.log('sort after',sorted);
-  // };
 
   return (
     <div>
@@ -90,7 +70,7 @@ const Card = ({ cartData, activeTab }) => {
               </div>
               <button
                 onClick={() => {
-                  handelSortByPrice(price);
+                  handelSort();
                 }}
                 className="lg:px-4 py-2 bg-stone-300 text-purple-500 lg:rounded-full 
               rounded-2xl lg:text-xl cursor-pointer"
@@ -99,7 +79,8 @@ const Card = ({ cartData, activeTab }) => {
               </button>
               <button
                 onClick={() => handelCost()}
-                className="lg:px-4 px-2 lg:py-2 bg-purple-500 text-white lg:rounded-full rounded-2xl outline-1 
+                className="lg:px-4 px-2 lg:py-2 bg-purple-500 text-white 
+                lg:rounded-full rounded-2xl outline-1 
                 lg:text-xl cursor-pointer"
               >
                 Purchase
@@ -109,42 +90,53 @@ const Card = ({ cartData, activeTab }) => {
         </div>
       )}
       {
-        <div className="card card-compact bg-base-100 lg:w-[800px] w-[400px] lg:h-[250px] shadow-xl rounded-2xl">
-          <img
-            className="absolute w-6 right-[20px] top-[20px]"
-            src={cancelIcon}
-            alt=""
-          />
-          <div className="flex lg:p-4 items-center justify-center">
-            <figure className="w-[200px] h-[124px] -mt-4">
-              <img
-                className="bg-stone-100 p-2 rounded-2xl"
-                src={product_image}
-                alt="product_image"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{product_title}</h2>
+       
+        // products.map((product)=>)
+        products.map((i, indx) => (
+          <div
+            key={indx}
+            className="card card-compact bg-base-100 lg:w-[800px] w-[300px] lg:h-[250px] shadow-xl rounded-2xl mt-6">
 
-              <div className="lg:flex gap-2">
-                <p className="font-bold">Description:</p>
+            {/* {i.product_title} */}
+            <img
+             className="absolute w-6 right-[20px] top-[20px] cursor-pointer"
+             onClick={()=>handelRemove(i.product_id)}
+             src={cancelIcon}
+             alt=""  />
+            <div className="flex lg:p-4 items-center justify-center">
+              <figure className="w-[200px] h-[124px] mt-4 lg:mt-0">
+                <img
+                  className="bg-stone-100 p-2 rounded-2xl"
+                  src={i.product_image} // Access product_image from the current item
+                  alt="product_image"
+                />
+              </figure>
 
-                <p>{description}</p>
-              </div>
-              <div className="flex gap-2 ">
-                <span className="font-bold">
-                  Price: <span>$</span>
-                </span>
-                <p>{price}</p>
-              </div>
-              <div className="card-actions justify-start">
-                <button className="btn bg-purple-400 rounded-3xl text-white">
-                  Add to Cart
-                </button>
+              <div className="card-body text-center lg:text-left">
+                <h2 className="card-title">{i.product_title}</h2>
+
+                <div className="flex flex-col lg:flex-row gap-2">
+                  <p className="font-bold">Description:</p>
+
+                  <p>{description}</p>
+                </div>
+                <div className=" lg:flex gap-2 justify-center lg:justify-start ">
+                  <span className="font-bold">
+                    Price: <span>$</span>
+                  </span>
+                  <p className="text-sm">{i.price}</p>
+                </div>
+                <div className="card-actions justify-center lg:justify-start mt-4">
+                  <button className="btn bg-purple-400 rounded-3xl text-white">
+                    Add to Cart
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        ))
+
+        // new end
       }
     </div>
   );

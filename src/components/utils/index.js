@@ -39,15 +39,17 @@ const getAllFavorites = () => {
     toast.success("Successfully added The Product!");
   };
     
-// 3. Remove a Coffee from local storage
+// // 3. Remove a Coffee from local storage
 // const removeFavorite = (id) => {
+//   console.log(id);
 //   // Get all previously Favorite save Coffee data
 //   const favorites = getAllFavorites();
 
-//   const remaining = favorites.filter((coffee) => coffee.id != id);
+//   const remaining = favorites.filter((i) => i.product_id != id);
+//   console.log('indx frm',remaining);
 //   //   add local storage delete data
-//   localStorage.setItem("favorites", JSON.stringify(remaining));
-//   toast.success("Successfully Remove The Coffee!");
+//   localStorage.setItem("carts", JSON.stringify(remaining));
+//   toast.success("Successfully Remove The Items!");
 // };
 
 // -----------------------Cart end-----------------------------
